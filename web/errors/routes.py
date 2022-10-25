@@ -3,15 +3,15 @@ from flask_login import current_user
 from web.errors import bp
 
 @bp.app_errorhandler(400)
-def page_not_found_error(e):
+def bad_request_error(e):
     return render_template("errors/400.html", user=current_user), 400
 
 @bp.app_errorhandler(401)
-def page_not_found_error(e):
+def unauthorized_error(e):
     return render_template("errors/401.html", user=current_user), 401
 
 @bp.app_errorhandler(403)
-def page_not_found_error(e):
+def forbidden_error(e):
     return render_template("errors/403.html", user=current_user), 403
 
 @bp.app_errorhandler(404)
